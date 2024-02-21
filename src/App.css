@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+/* src / App.css */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin-top: 70px;
+  background: hsl(var(--hue),var(--sat),98%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-app {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 520px;
+  min-height: 600px;
+  text-align: center;
+  background-color: coral;
+  margin: auto;
+  border-radius: 10px;
+  padding: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-list {
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/*Neon*/
+h1 {
+  margin: 32px 0;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  font-family: Monoton;
+}
+
+.todo-form {
+  margin-bottom: 32px;
+}
+
+.todo-input {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #0000001a;
+  outline: none;
+  width: 320px;
+  background: #fafafa;
+  color: #333;
+}
+
+.todo-input::placeholder {
+  color: #333;
+}
+
+.todo-button {
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: #333;
+  color: #fafafa;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.todo {
+  overflow-y: auto;
+}
+.todo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #333;
+  background: #fafafa;
+  border: 2px solid #333;
+  border-radius: 0.75rem;
+  padding: 15px;
+  width: 90%;
+  border-radius: 1rem;
+}
+
+.todo-row div:first-child {
+  font-size: 1.4rem;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.delete-icon {
+  margin-right: 5px;
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  .todo-app {
+    width:100%;
+    padding: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+  h1 {
+    font-size: 1.5rem;
+  }
+  .todo-input {
+    width: 220px;
+  }
+  .todo-row {
+    width: 100%;
+  }
+  .icons {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .delete-icon {
+    margin: 0;
   }
 }
